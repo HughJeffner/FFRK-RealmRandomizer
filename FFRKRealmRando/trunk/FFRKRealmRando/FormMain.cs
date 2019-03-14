@@ -24,7 +24,7 @@ namespace FFRKRealmRando
 
             //Init font
             string filename = "finalf.ttf";
-            File.WriteAllBytes(filename, Properties.Resources.finalf);
+            if (!File.Exists(filename)) File.WriteAllBytes(filename, Properties.Resources.finalf);
             PrivateFontCollection pfc = new PrivateFontCollection();
             pfc.AddFontFile(filename);
             Font ffFont = new Font(pfc.Families[0], 18);
