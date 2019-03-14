@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
+using System.IO;
 using System.Linq;
 using System.Resources;
 using System.Text;
@@ -11,14 +13,25 @@ using System.Windows.Forms;
 
 namespace FFRKRealmRando
 {
-    public partial class Form1 : Form
+    public partial class FormMain : Form
     {
 
         Random rando = new Random();
 
-        public Form1()
+        public FormMain()
         {
             InitializeComponent();
+
+            //Init font
+            string filename = "finalf.ttf";
+            File.WriteAllBytes(filename, Properties.Resources.finalf);
+            PrivateFontCollection pfc = new PrivateFontCollection();
+            pfc.AddFontFile(filename);
+            Font ffFont = new Font(pfc.Families[0], 18);
+            btnPull.Font = ffFont;
+            btnReset.Font = ffFont;
+            label1.Font = new Font(pfc.Families[0], 36);
+            
         }
 
         private void btnPull_Click(object sender, EventArgs e)
@@ -31,8 +44,21 @@ namespace FFRKRealmRando
         private void Form1_Load(object sender, EventArgs e)
         {
 
+            //Reset
             btnReset_Click(sender, e);
-            
+            applySettings();
+           
+        }
+
+        private void applySettings()
+        {
+
+            label1.Text = Properties.Settings.Default.LabelText;
+
+            //Colors
+            label1.ForeColor = Properties.Settings.Default.FontColor;
+            flowLayoutPanel1.BackColor = Properties.Settings.Default.BackColor;
+
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -70,20 +96,32 @@ namespace FFRKRealmRando
         int maxBlinks = 5;
         private void timer2_Tick(object sender, EventArgs e)
         {
-             if (flowLayoutPanel1.BackColor == Color.Lime)
+             if (flowLayoutPanel1.BackColor == Properties.Settings.Default.BackColor)
             {
-                flowLayoutPanel1.BackColor = Color.DarkGray;
+                flowLayoutPanel1.BackColor = Properties.Settings.Default.FlashColor;
                 blinks += 1;
             }
             else
             {
-                flowLayoutPanel1.BackColor = Color.Lime;
+                flowLayoutPanel1.BackColor = Properties.Settings.Default.BackColor;
             }
             if (blinks >= maxBlinks)
             {
                 blinks = 0;
-                flowLayoutPanel1.BackColor = Color.Lime;
+                flowLayoutPanel1.BackColor = Properties.Settings.Default.BackColor;
                 timer2.Enabled = false;
+            }
+        }
+
+        private void flowLayoutPanel1_Click(object sender, EventArgs e)
+        {
+            using (FormSettings formSettings = new FormSettings()){
+
+                if (formSettings.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
+                {
+                    applySettings();
+                }
+
             }
         }
     }
