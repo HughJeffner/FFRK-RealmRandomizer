@@ -14,5 +14,8 @@
     <Setting Name="LabelText" Type="System.String" Scope="User">
       <Value Profile="(Default)">NEXT REALM</Value>
     </Setting>
+    <Setting Name="LabelFont" Type="System.Drawing.Font" Scope="User">
+      <Value Profile="(Default)">Microsoft Sans Serif, 18pt, style=Bold</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

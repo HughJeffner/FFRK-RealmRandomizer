@@ -23,6 +23,7 @@ namespace FFRKRealmRando
             btnFontColor.BackColor = Properties.Settings.Default.FontColor;
             btnBackgroundColor.BackColor = Properties.Settings.Default.BackColor;
             btnFlashColor.BackColor = Properties.Settings.Default.FlashColor;
+            fontDialog1.Font = Properties.Settings.Default.LabelFont;
 
         }
 
@@ -32,6 +33,7 @@ namespace FFRKRealmRando
             Properties.Settings.Default.FontColor = btnFontColor.BackColor;
             Properties.Settings.Default.BackColor = btnBackgroundColor.BackColor;
             Properties.Settings.Default.FlashColor = btnFlashColor.BackColor;
+            Properties.Settings.Default.LabelFont = fontDialog1.Font;
             Properties.Settings.Default.Save();
 
             this.DialogResult = DialogResult.OK;
@@ -49,6 +51,11 @@ namespace FFRKRealmRando
             colorDialog1.Color = b.BackColor;
             colorDialog1.ShowDialog(this);
             b.BackColor = colorDialog1.Color;
+        }
+
+        private void btnFont_Click(object sender, EventArgs e)
+        {
+            fontDialog1.ShowDialog(this);
         }
                
     }
