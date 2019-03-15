@@ -36,29 +36,32 @@ namespace FFRKRealmRando
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // Restore previous window size
+            this.Size = Properties.Settings.Default.FormSize;
 
-            //Reset
+            // Reset
             btnReset_Click(sender, e);
             applySettings();
-           
         }
 
         private void applySettings()
         {
-            //Update UI with current settings
+            // Update UI with current settings
             label1.Text = Properties.Settings.Default.LabelText;
             label1.ForeColor = Properties.Settings.Default.FontColor;
             label1.Font = Properties.Settings.Default.LabelFont;
-            flowLayoutPanel1.BackColor = Properties.Settings.Default.BackColor;
+            panel1.BackColor = Properties.Settings.Default.BackColor;
         }
 
         private void btnPull_Click(object sender, EventArgs e)
         {
-            timer1.Enabled = true;
+            // Start animation timer
+            timer1.Start();
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
+            // Reset realm checkbox to intial state
             for (int x = 0; x < checkedListBox1.Items.Count; x++)
             {
                 checkedListBox1.Items[x] = new Realm(checkedListBox1.Items[x].ToString());
@@ -103,25 +106,25 @@ namespace FFRKRealmRando
         int maxBlinks = 5;
         private void timer2_Tick(object sender, EventArgs e)
         {
-             if (flowLayoutPanel1.BackColor == Properties.Settings.Default.BackColor)
+             if (panel1.BackColor == Properties.Settings.Default.BackColor)
             {
-                flowLayoutPanel1.BackColor = Properties.Settings.Default.FlashColor;
+                panel1.BackColor = Properties.Settings.Default.FlashColor;
                 blinks += 1;
             }
             else
             {
-                flowLayoutPanel1.BackColor = Properties.Settings.Default.BackColor;
+                panel1.BackColor = Properties.Settings.Default.BackColor;
             }
             if (blinks >= maxBlinks)
             {
                 blinks = 0;
-                flowLayoutPanel1.BackColor = Properties.Settings.Default.BackColor;
+                panel1.BackColor = Properties.Settings.Default.BackColor;
                 timer2.Enabled = false;
             }
         }
 
         // Click to show settings
-        private void flowLayoutPanel1_Click(object sender, EventArgs e)
+        private void panel1_Click(object sender, EventArgs e)
         {
             using (FormSettings formSettings = new FormSettings()){
 
@@ -131,6 +134,13 @@ namespace FFRKRealmRando
                 }
 
             }
+        }
+
+        // Save window size
+        private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.FormSize = this.Size;
+            Properties.Settings.Default.Save();
         }
     }
 }
