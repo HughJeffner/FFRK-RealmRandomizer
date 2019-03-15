@@ -94,5 +94,29 @@ namespace FFRKRealmRando.Properties {
                 this["FormSize"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("WindowText")]
+        public global::System.Drawing.Color BorderColor {
+            get {
+                return ((global::System.Drawing.Color)(this["BorderColor"]));
+            }
+            set {
+                this["BorderColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public float BorderSize {
+            get {
+                return ((float)(this["BorderSize"]));
+            }
+            set {
+                this["BorderSize"] = value;
+            }
+        }
     }
 }
