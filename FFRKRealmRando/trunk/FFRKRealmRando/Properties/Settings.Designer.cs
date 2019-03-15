@@ -70,5 +70,17 @@ namespace FFRKRealmRando.Properties {
                 this["LabelText"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Microsoft Sans Serif, 18pt, style=Bold")]
+        public global::System.Drawing.Font LabelFont {
+            get {
+                return ((global::System.Drawing.Font)(this["LabelFont"]));
+            }
+            set {
+                this["LabelFont"] = value;
+            }
+        }
     }
 }

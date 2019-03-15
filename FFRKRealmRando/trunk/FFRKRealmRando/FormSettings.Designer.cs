@@ -39,6 +39,8 @@
             this.btnBackgroundColor = new System.Windows.Forms.Button();
             this.btnFlashColor = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.btnFont = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -104,7 +106,7 @@
             // 
             this.txtLabelText.Location = new System.Drawing.Point(118, 24);
             this.txtLabelText.Name = "txtLabelText";
-            this.txtLabelText.Size = new System.Drawing.Size(273, 20);
+            this.txtLabelText.Size = new System.Drawing.Size(227, 20);
             this.txtLabelText.TabIndex = 6;
             // 
             // btnFontColor
@@ -137,6 +139,16 @@
             this.btnFlashColor.UseVisualStyleBackColor = false;
             this.btnFlashColor.Click += new System.EventHandler(this.btnColor_Click);
             // 
+            // btnFont
+            // 
+            this.btnFont.Location = new System.Drawing.Point(351, 24);
+            this.btnFont.Name = "btnFont";
+            this.btnFont.Size = new System.Drawing.Size(40, 20);
+            this.btnFont.TabIndex = 10;
+            this.btnFont.Text = "Aa";
+            this.btnFont.UseVisualStyleBackColor = true;
+            this.btnFont.Click += new System.EventHandler(this.btnFont_Click);
+            // 
             // FormSettings
             // 
             this.AcceptButton = this.btnOk;
@@ -144,6 +156,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(403, 184);
+            this.Controls.Add(this.btnFont);
             this.Controls.Add(this.btnFlashColor);
             this.Controls.Add(this.btnBackgroundColor);
             this.Controls.Add(this.btnFontColor);
@@ -158,6 +171,7 @@
             this.Name = "FormSettings";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Settings";
             this.Load += new System.EventHandler(this.FormSettings_Load);
             this.ResumeLayout(false);
@@ -178,6 +192,8 @@
         private System.Windows.Forms.Button btnBackgroundColor;
         private System.Windows.Forms.Button btnFlashColor;
         private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.FontDialog fontDialog1;
+        private System.Windows.Forms.Button btnFont;
 
     }
 }
