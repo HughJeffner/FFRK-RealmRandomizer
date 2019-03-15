@@ -55,7 +55,15 @@ namespace FFRKRealmRando
 
         private void btnFont_Click(object sender, EventArgs e)
         {
-            fontDialog1.ShowDialog(this);
+            try
+            {
+                fontDialog1.ShowDialog(this);
+            }
+            catch
+            {
+                MessageBox.Show("Font not supported!");
+            }
+            
         }
                
     }

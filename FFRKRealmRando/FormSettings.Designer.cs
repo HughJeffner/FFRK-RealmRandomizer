@@ -139,6 +139,10 @@
             this.btnFlashColor.UseVisualStyleBackColor = false;
             this.btnFlashColor.Click += new System.EventHandler(this.btnColor_Click);
             // 
+            // fontDialog1
+            // 
+            this.fontDialog1.ShowEffects = false;
+            // 
             // btnFont
             // 
             this.btnFont.Location = new System.Drawing.Point(351, 24);
