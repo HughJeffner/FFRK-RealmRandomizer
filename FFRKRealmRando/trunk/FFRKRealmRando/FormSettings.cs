@@ -20,6 +20,8 @@ namespace FFRKRealmRando
         private void FormSettings_Load(object sender, EventArgs e)
         {
             txtLabelText.Text = Properties.Settings.Default.LabelText;
+            numericUpDown1.Value = (decimal)Properties.Settings.Default.BorderSize;
+            btnBorderColor.BackColor = Properties.Settings.Default.BorderColor;
             btnFontColor.BackColor = Properties.Settings.Default.FontColor;
             btnBackgroundColor.BackColor = Properties.Settings.Default.BackColor;
             btnFlashColor.BackColor = Properties.Settings.Default.FlashColor;
@@ -30,6 +32,8 @@ namespace FFRKRealmRando
         private void btnOk_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.LabelText = txtLabelText.Text;
+            Properties.Settings.Default.BorderSize = (float)numericUpDown1.Value;
+            Properties.Settings.Default.BorderColor = btnBorderColor.BackColor;
             Properties.Settings.Default.FontColor = btnFontColor.BackColor;
             Properties.Settings.Default.BackColor = btnBackgroundColor.BackColor;
             Properties.Settings.Default.FlashColor = btnFlashColor.BackColor;

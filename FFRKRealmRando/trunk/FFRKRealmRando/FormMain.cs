@@ -50,7 +50,10 @@ namespace FFRKRealmRando
             label1.Text = Properties.Settings.Default.LabelText;
             label1.ForeColor = Properties.Settings.Default.FontColor;
             label1.Font = Properties.Settings.Default.LabelFont;
+            label1.BorderColor = Properties.Settings.Default.BorderColor;
+            label1.BorderSize = Properties.Settings.Default.BorderSize;
             panel1.BackColor = Properties.Settings.Default.BackColor;
+
         }
 
         private void btnPull_Click(object sender, EventArgs e)

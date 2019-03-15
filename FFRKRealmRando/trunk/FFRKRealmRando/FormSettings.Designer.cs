@@ -41,13 +41,18 @@
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.btnFont = new System.Windows.Forms.Button();
+            this.btnBorderColor = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(316, 149);
+            this.btnCancel.Location = new System.Drawing.Point(316, 181);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 0;
@@ -58,7 +63,7 @@
             // btnOk
             // 
             this.btnOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOk.Location = new System.Drawing.Point(235, 149);
+            this.btnOk.Location = new System.Drawing.Point(235, 181);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(75, 23);
             this.btnOk.TabIndex = 1;
@@ -68,7 +73,7 @@
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(12, 50);
+            this.label1.Location = new System.Drawing.Point(12, 79);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 2;
@@ -77,7 +82,7 @@
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(12, 79);
+            this.label2.Location = new System.Drawing.Point(12, 108);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 23);
             this.label2.TabIndex = 3;
@@ -86,7 +91,7 @@
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(12, 108);
+            this.label3.Location = new System.Drawing.Point(12, 137);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 23);
             this.label3.TabIndex = 4;
@@ -112,7 +117,7 @@
             // btnFontColor
             // 
             this.btnFontColor.BackColor = System.Drawing.SystemColors.Window;
-            this.btnFontColor.Location = new System.Drawing.Point(118, 50);
+            this.btnFontColor.Location = new System.Drawing.Point(118, 79);
             this.btnFontColor.Name = "btnFontColor";
             this.btnFontColor.Size = new System.Drawing.Size(39, 23);
             this.btnFontColor.TabIndex = 7;
@@ -122,7 +127,7 @@
             // btnBackgroundColor
             // 
             this.btnBackgroundColor.BackColor = System.Drawing.SystemColors.WindowText;
-            this.btnBackgroundColor.Location = new System.Drawing.Point(118, 79);
+            this.btnBackgroundColor.Location = new System.Drawing.Point(118, 108);
             this.btnBackgroundColor.Name = "btnBackgroundColor";
             this.btnBackgroundColor.Size = new System.Drawing.Size(39, 23);
             this.btnBackgroundColor.TabIndex = 8;
@@ -132,7 +137,7 @@
             // btnFlashColor
             // 
             this.btnFlashColor.BackColor = System.Drawing.Color.DarkGray;
-            this.btnFlashColor.Location = new System.Drawing.Point(118, 108);
+            this.btnFlashColor.Location = new System.Drawing.Point(118, 137);
             this.btnFlashColor.Name = "btnFlashColor";
             this.btnFlashColor.Size = new System.Drawing.Size(39, 23);
             this.btnFlashColor.TabIndex = 9;
@@ -153,13 +158,57 @@
             this.btnFont.UseVisualStyleBackColor = true;
             this.btnFont.Click += new System.EventHandler(this.btnFont_Click);
             // 
+            // btnBorderColor
+            // 
+            this.btnBorderColor.BackColor = System.Drawing.SystemColors.WindowText;
+            this.btnBorderColor.Location = new System.Drawing.Point(118, 50);
+            this.btnBorderColor.Name = "btnBorderColor";
+            this.btnBorderColor.Size = new System.Drawing.Size(39, 23);
+            this.btnBorderColor.TabIndex = 12;
+            this.btnBorderColor.UseVisualStyleBackColor = false;
+            this.btnBorderColor.Click += new System.EventHandler(this.btnColor_Click);
+            // 
+            // label5
+            // 
+            this.label5.Location = new System.Drawing.Point(12, 50);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(100, 23);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Outline Color";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label6
+            // 
+            this.label6.Location = new System.Drawing.Point(173, 50);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(100, 23);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Outline Size";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(279, 53);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            32,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(65, 20);
+            this.numericUpDown1.TabIndex = 14;
+            // 
             // FormSettings
             // 
             this.AcceptButton = this.btnOk;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(403, 184);
+            this.ClientSize = new System.Drawing.Size(403, 216);
+            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.btnBorderColor);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnFont);
             this.Controls.Add(this.btnFlashColor);
             this.Controls.Add(this.btnBackgroundColor);
@@ -178,6 +227,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Settings";
             this.Load += new System.EventHandler(this.FormSettings_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,6 +248,10 @@
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.FontDialog fontDialog1;
         private System.Windows.Forms.Button btnFont;
+        private System.Windows.Forms.Button btnBorderColor;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
 
     }
 }
