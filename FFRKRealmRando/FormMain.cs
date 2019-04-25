@@ -10,6 +10,7 @@ using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Transitions;
 
 namespace FFRKRealmRando
 {
@@ -60,6 +61,17 @@ namespace FFRKRealmRando
         {
             // Start animation timer
             timer1.Start();
+                       
+        }
+
+        private Image getNextImage()
+        {
+            // Get next realm
+            int index = rando.Next(checkedListBox1.CheckedItems.Count);
+
+            // Update with the image
+            return ((Realm)checkedListBox1.CheckedItems[index]).Image;
+            
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -100,29 +112,18 @@ namespace FFRKRealmRando
                 timer1.Enabled = false;
                 timer1.Interval = initdelay;
                 delay = initdelay;
-                timer2.Enabled = true;
-            }
-        }
 
-        // Blink animation
-        int blinks = 0;
-        int maxBlinks = 5;
-        private void timer2_Tick(object sender, EventArgs e)
-        {
-             if (panel1.BackColor == Properties.Settings.Default.BackColor)
-            {
-                panel1.BackColor = Properties.Settings.Default.FlashColor;
-                blinks += 1;
-            }
-            else
-            {
-                panel1.BackColor = Properties.Settings.Default.BackColor;
-            }
-            if (blinks >= maxBlinks)
-            {
-                blinks = 0;
-                panel1.BackColor = Properties.Settings.Default.BackColor;
-                timer2.Enabled = false;
+                // Blink Animation
+                Transition.run(panel1, "BackColor", Properties.Settings.Default.FlashColor, new TransitionType_Flash(4, 250));
+
+                // Bounce Animation
+                pictureBox1.BringToFront();
+                Transition bounce = new Transition(new TransitionType_Bounce(500));
+                bounce.add(pictureBox1, "Left", pictureBox1.Left - 25);
+                bounce.add(pictureBox1, "Width", pictureBox1.Width + 50);
+                bounce.add(pictureBox1, "Top", pictureBox1.Top - 25);
+                bounce.add(pictureBox1, "Height", pictureBox1.Height + 50);
+                bounce.run();
             }
         }
 
