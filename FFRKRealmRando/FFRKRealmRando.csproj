@@ -168,6 +168,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app.ico" />
+    <None Include="Resources\e_bio.png" />
+    <None Include="Resources\e_dark.png" />
+    <None Include="Resources\e_earth.png" />
+    <None Include="Resources\e_fire.png" />
+    <None Include="Resources\e_holy.png" />
+    <None Include="Resources\e_ice.png" />
+    <None Include="Resources\e_lightning.png" />
+    <None Include="Resources\e_water.png" />
+    <None Include="Resources\e_wind.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
