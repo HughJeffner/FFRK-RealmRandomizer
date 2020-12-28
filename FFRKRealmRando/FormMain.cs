@@ -25,18 +25,21 @@ namespace FFRKRealmRando
             InitializeComponent();
 
             //Extract UI font to local directory
-            string filename = "finalf.ttf";
-            if (!File.Exists(filename)) File.WriteAllBytes(filename, Properties.Resources.finalf);
-            PrivateFontCollection pfc = new PrivateFontCollection();
-            pfc.AddFontFile(filename);
-            Font ffFont = new Font(pfc.Families[0], 18);
-            btnPull.Font = ffFont;
-            btnReset.Font = ffFont;
-                        
+            try
+            {
+                string filename = "finalf.ttf";
+                if (!File.Exists(filename)) File.WriteAllBytes(filename, Properties.Resources.finalf);
+            }
+            catch { }
+                 
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            
+            // Title
+            this.Text += " " + Application.ProductVersion;
+            
             // Restore previous window size
             this.Size = Properties.Settings.Default.FormSize;
 

@@ -50,7 +50,7 @@
             this.btnPull.Name = "btnPull";
             this.btnPull.Size = new System.Drawing.Size(89, 36);
             this.btnPull.TabIndex = 1;
-            this.btnPull.Text = "PULL!";
+            this.btnPull.Text = "Pull!";
             this.btnPull.UseVisualStyleBackColor = true;
             this.btnPull.Click += new System.EventHandler(this.btnPull_Click);
             // 
@@ -107,7 +107,7 @@
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(89, 36);
             this.btnReset.TabIndex = 3;
-            this.btnReset.Text = "RESET";
+            this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
@@ -180,7 +180,7 @@
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(420, 38);
+            this.MinimumSize = new System.Drawing.Size(420, 39);
             this.Name = "FormMain";
             this.Text = "FFRK Realm Randomizer";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);

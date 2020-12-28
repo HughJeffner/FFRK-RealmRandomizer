@@ -26,6 +26,7 @@ namespace FFRKRealmRando
             btnBackgroundColor.BackColor = Properties.Settings.Default.BackColor;
             btnFlashColor.BackColor = Properties.Settings.Default.FlashColor;
             fontDialog1.Font = Properties.Settings.Default.LabelFont;
+            fontDialog1.FontMustExist = true;
 
         }
 
